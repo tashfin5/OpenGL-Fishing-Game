@@ -1,0 +1,40 @@
+# depslib dependency file v1.0
+1756619944 source:c:\users\saif's workstation\downloads\opengl_fishing_game_v7\src\main.cpp
+	<cmath>
+	<vector>
+	<string>
+	<cstdio>
+	<cstdlib>
+	<fstream>
+	<windows.h>
+	<mmsystem.h>
+	<digitalv.h>
+	<GL/glut.h>
+	<GL/glu.h>
+
+1756913440 source:c:\users\mwtsf\onedrive\desktop\opengl_fishing_game_v7\src\main.cpp
+	<cmath>
+	<vector>
+	<string>
+	<cstdio>
+	<cstdlib>
+	<fstream>
+	<windows.h>
+	<mmsystem.h>
+	<digitalv.h>
+	<GL/glut.h>
+	<GL/glu.h>
+
+1756913440 source:c:\users\mwtsf\onedrive\desktop\opengl_fishing_game\src\main.cpp
+	<cmath>
+	<vector>
+	<string>
+	<cstdio>
+	<cstdlib>
+	<fstream>
+	<windows.h>
+	<mmsystem.h>
+	<digitalv.h>
+	<GL/glut.h>
+	<GL/glu.h>
+
