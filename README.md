@@ -20,9 +20,9 @@ A 3D interactive fishing game developed using C++ and OpenGL. Catch colorful fis
 * **ESC:** Exit game
 
 ## How to Run
-1. **Open the Project:** Open the `OpenGL-Fishing-Game.cbp` file in **Code::Blocks**.
-2. **Build:** Build the project (Ctrl+F9). Make sure you have OpenGL and GLUT/FreeGLUT properly set up in your compiler.
-3. **Play:** Run the game directly from Code::Blocks, or use the provided `RunGame.bat` script in the root folder to quickly launch the built executable.
+1. **Quick Play:** Double-click `OpenGL-Fishing-Game.exe` in the root folder. The game comes with `freeglut.dll` and is statically linked, so no additional installations are required to run it!
+2. **Build from Source:** Open the `OpenGL-Fishing-Game.cbp` file in **Code::Blocks** and build the project (Ctrl+F9). Make sure you have OpenGL and FreeGLUT properly set up in your compiler.
+3. **Run Script:** You can also use the provided `RunGame.bat` script to quickly compile and run the game if you have MinGW installed.
 
 ## Project Structure
 * `src/main.cpp`: Main game logic, rendering, and input handling.

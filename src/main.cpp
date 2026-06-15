@@ -7,7 +7,6 @@
 #ifdef _WIN32
 #include <windows.h>
 #include <mmsystem.h>
-#include <digitalv.h>
 #pragma comment(lib, "winmm.lib")
 #endif
 #include <GL/glut.h>
@@ -59,6 +58,9 @@ void readMusicPath() {
     std::ifstream in("audio/music_path.txt");
     if (in) {
         std::getline(in, g_musicPath);
+        if (!g_musicPath.empty() && g_musicPath.back() == '\r') {
+            g_musicPath.pop_back();
+        }
         if (g_musicPath.size()==0) g_musicPath = "audio/bg.wav";
     }
 }
@@ -78,15 +80,19 @@ void playMusic(const std::string& path) {
     std::string ext;
     if (path.size() >= 4) ext = path.substr(path.size()-4);
     for(char &c: ext) c = tolower(c);
+    
+    std::string safePath = path;
+    for(char &c : safePath) if (c == '/') c = '\\';
+
     if (ext == ".mp3") {
         // Use MCI for mp3
-        std::string cmd1 = "open \"" + path + "\" type mpegvideo alias mymp3";
+        std::string cmd1 = "open \"" + safePath + "\" type mpegvideo alias mymp3";
         mciSendString(cmd1.c_str(), NULL, 0, NULL);
         mciSendString("play mymp3 repeat", NULL, 0, NULL);
         g_musicUsingMCI=true;
     } else {
         // Default WAV via PlaySound
-        PlaySound(path.c_str(), NULL, SND_ASYNC | SND_LOOP | SND_FILENAME);
+        PlaySound(safePath.c_str(), NULL, SND_ASYNC | SND_LOOP | SND_FILENAME | SND_NODEFAULT);
         g_musicUsingMCI=false;
     }
 }
